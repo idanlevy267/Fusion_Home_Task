@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to Tic Tac Toe</title>
+
+  <!-- 1. Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- 2. Import the Roboto font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- 3. Link your own CSS after the font import -->
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Tic Tac Toe!</h1>
+
+    <!-- Section: Create a new game -->
+    <div class="section">
+      <h2>Create a New Game</h2>
+      <p>Select which role you want to play:</p>
+      <button onclick="window.location.href='/create_game/X'">Play as X</button>
+      <button onclick="window.location.href='/create_game/O'">Play as O</button>
+    </div>
+
+    <!-- Section: Join an existing game -->
+    <div class="section">
+      <h2>Join an Existing Game</h2>
+      <form action="" onsubmit="joinExistingGame(event)">
+        <label for="roomId">Enter Game ID:</label>
+        <input type="text" id="roomId" name="roomId" required>
+        <button type="submit">Join Game</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function joinExistingGame(e) {
+      e.preventDefault();
+      const roomId = document.getElementById('roomId').value.trim();
+      if (roomId) {
+        window.location.href = '/join_game/' + roomId;
+      }
+    }
+  </script>
+  
+  <div class="image-container">
+	<img src="/static/images/welcome_pic.png" alt="Welcome Image">
+  </div>
+</body>
+</html>

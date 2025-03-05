@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe</title>
+
+  <!-- Google Fonts + CSS (as before) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Tic Tac Toe</h1>
+
+    <div class="room-id">
+      Your Game ID: <strong>{{ room_id }}</strong>
+    </div>
+
+    <div id="status">Connecting to the game...</div>
+    <div id="board"></div>
+
+    <!-- Our new "New Game" button, initially hidden -->
+    <button id="newGameBtn" style="display: none;">New Game</button>
+    <button id="resetBtn" style="display:none;">Reset Game</button>
+	<button id="exitBtn" style="display: none;">Exit</button>
+
+  </div>
+
+  <!-- Socket.IO client library -->
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js" crossorigin="anonymous"></script>
+  <!-- Main JS for game logic -->
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
